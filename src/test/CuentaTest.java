@@ -44,5 +44,21 @@ class CuentaTest {
 		cuenta.retirar(500d);
 		assertEquals(-500,cuenta.getSaldo());	
 	}
-
+	
+	@Test
+	void test0014() {
+		
+		cuenta1.retirar(200d);
+		cuenta2.retirar(350d);
+		cuenta1.ingresar(100d);
+		cuenta2.retirar(200d);
+		cuenta2.retirar(150d);
+		cuenta1.retirar(200d);
+		cuenta2.ingresar(50d);
+		cuenta2.retirar(100d);
+		
+		System.out.println("Saldo cuenta 12345: "+ cuenta1.getSaldo());	
+		System.out.println("Saldo cuenta 67890: "+ cuenta2.getSaldo());	
+	}
+	
 }
