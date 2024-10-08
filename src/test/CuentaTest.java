@@ -12,11 +12,10 @@ import pkg.Cuenta;
 
 class CuentaTest {
 	
-	static Cuenta cuenta;
+    Cuenta cuenta;
 	
 	@BeforeAll
-	static void setUpBeforeClass() throws Exception {
-		cuenta  = new Cuenta();
+	static void setUpBeforeClass() throws Exception {	
 	}
 
 	@AfterAll
@@ -25,6 +24,7 @@ class CuentaTest {
 
 	@BeforeEach
 	void setUp() throws Exception {
+		cuenta  = new Cuenta((double) 0);
 	}
 
 	@AfterEach
@@ -35,8 +35,14 @@ class CuentaTest {
 	void testIngresar() {
 		//suponer inicial es 0
 		cuenta.ingresar(500d);
-		assertEquals(500,cuenta.getSaldo());
-		
+		assertEquals(500,cuenta.getSaldo());	
+	}
+	
+	@Test
+	void testRetirar() {
+
+		cuenta.retirar(500d);
+		assertEquals(-500,cuenta.getSaldo());	
 	}
 
 }
