@@ -63,7 +63,6 @@ class CuentaTest {
 		System.out.println("Saldo cuenta 12345: "+ cuenta1.getSaldo());	
 		System.out.println("Saldo cuenta 67890: "+ cuenta2.getSaldo());
 		
-		cuenta2.setSaldo(-450d);
 		if(cuenta1.getSaldo()==-250 && cuenta2.getSaldo()==-450)
 			assertTrue(true);
 		else
